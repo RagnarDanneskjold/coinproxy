@@ -1,0 +1,14 @@
+.DS_Store
+erl_crash.dump
+*.beam
+*.dat
+*.ets
+*.BUP
+*.DCD
+*.LOG
+*.DAT
+*.log
+*.access
+*.auth
+.~*
+coinproxy.hrl
