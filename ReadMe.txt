@@ -1,6 +1,8 @@
 ----------------------------------------------------------------------
 CoinProxy
 ----------------------------------------------------------------------
+cowboy-based
+
 yaws-based (use this one)
 
     The Yaws-based version can unpack and repack the RPC initiated by
