@@ -1,0 +1,4 @@
+-define(BITCOIND_HOST, "example.com").
+-define(RPC_PORT, "8332"). %% Please note that the port number is represented as a string rather than an integer.
+-define(RPC_USERNAME, "username").
+-define(RPC_PASSWORD, "pass").

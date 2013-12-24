@@ -11,4 +11,4 @@ erl_crash.dump
 *.access
 *.auth
 .~*
-coinproxy.hrl
+coinproxy_dev.hrl

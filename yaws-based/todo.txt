@@ -1,1 +1,1 @@
-Remove "coinproxy.hrl" from .gitignore
+
