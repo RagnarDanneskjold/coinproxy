@@ -12,3 +12,4 @@ erl_crash.dump
 *.auth
 .~*
 coinproxy_dev.hrl
+conf_dev.rb
