@@ -1,13 +1,22 @@
 ----------------------------------------------------------------------
 CoinProxy
 ----------------------------------------------------------------------
-cowboy-based
+sinatra-based
 
-yaws-based (use this one)
+    The Sinatra-based (Ruby) version can unpack and repack the RPC
+    initiated by the client and functions as a proxy. Filtering and
+    validating functionalities can be added in the future.
 
-    The Yaws-based version can unpack and repack the RPC initiated by
-    the client and functions as a proxy. Filtering and validating
-    functionalities can be added in the future.
+    Detailed instructions for using sinatra-based coinproxy can be
+    found in sinatra-based/ReadMe.txt
+
+cowboy-based (not implemented yet)
+
+yaws-based
+
+    The Yaws-based (Erlang) version can unpack and repack the RPC
+    initiated by the client and functions as a proxy. Filtering and
+    validating functionalities can be added in the future.
 
     Detailed instructions for using yaws-based coinproxy can be found
     in yaws-based/ReadMe.txt
