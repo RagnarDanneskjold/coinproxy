@@ -7,8 +7,8 @@
 -include_lib("yaws.hrl").
 -include_lib("yaws_api.hrl").
 
-%%-include("coinproxy.hrl").
--include("coinproxy_dev.hrl").
+-include("coinproxy.hrl").
+%% -include("coinproxy_dev.hrl").
 
 out(Arg) ->
     Peer = case yaws_api:get_sslsocket(Arg#arg.clisock) of
