@@ -19,9 +19,10 @@ post '/' do
 
   case api_list[data['method']]
   when nil
-    error = "This API is not defined!"
-    puts error
-    {"result" => "null", "error" => error, "id" => "null"}.to_json.dump
+    error_msg = "Method not found"
+    puts error_msg
+    # Bitcoin RPC error codes: https://github.com/bitcoin/bitcoin/blob/master/src/rpcprotocol.h#L34
+    {"error" => {"code" => -32601, "message" => error_msg}}.to_json
   when "enabled"
     # Repack and forward the request
     @post_ws = "/"
@@ -38,8 +39,9 @@ post '/' do
     # Forward the response to the original client
     res.body
   else
-    error =  "This API is not enabled!"
-    puts error
-    {"error" => error}.to_json.dump
+    error_msg =  "This API is not enabled!"
+    puts error_msg
+    # The error code -32800 here is NOT an official error code
+    {"error" => {"code" => -32800, "message" => error_msg}}.to_json
   end
 end
