@@ -8,5 +8,8 @@ Usage
 
     Edit "conf.rb" according to the setups of the remote bitcoind node
 
-    $ ruby coinproxy.rb
+    Enable the APIs we want through "api_controller.json"
+
+    Start the proxy
+        $ ruby coinproxy.rb
 ----------------------------------------------------------------------
