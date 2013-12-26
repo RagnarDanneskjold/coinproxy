@@ -17,11 +17,13 @@ Usage:
        $ cd coinproxy/yaws-based/
 
     4) Edit include/coinproxy.hrl accordingly
+
+    5) Enable the APIs we want through "api_controller.conf"
     
-    5) Start the proxy (better do this within a screen session)
+    6) Start the proxy (better do this within a screen session)
        $ yaws --conf ./yaws.conf
 
-    6) Now we can talk with the remote bitcoind node via the local
+    7) Now we can talk with the remote bitcoind node via the local
     Yaws-based coinproxy
 
 ----------------------------------------------------------------------
