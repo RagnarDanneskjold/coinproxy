@@ -32,15 +32,22 @@ post '/' do
     req.body = @payload
 
     # Accept the response from bitcoind
-    res = Net::HTTP.new(settings.host, settings.port).start {|http| http.request(req)}
-    puts "#{res.code} #{res.message} #{res.body}"
-    
-    # Forward the response to the original client
-    res.body
+    begin
+      res = Net::HTTP.new(settings.host, settings.port).start {|http| http.request(req)}
+      puts "#{res.code} #{res.message} #{res.body}"
+      # Forward the response to the original client
+      res.body
+    rescue => err
+      puts err
+      error_msg =  "couldn't connect to server"
+      puts error_msg
+      # The error code -32800 here is NOT an official error code
+      {"error" => {"code" => -32800, "message" => error_msg}}.to_json
+    end
   else
     error_msg =  "This API is not enabled!"
     puts error_msg
-    # The error code -32800 here is NOT an official error code
-    {"error" => {"code" => -32800, "message" => error_msg}}.to_json
+    # The error code -32801 here is NOT an official error code
+    {"error" => {"code" => -32801, "message" => error_msg}}.to_json
   end
 end
