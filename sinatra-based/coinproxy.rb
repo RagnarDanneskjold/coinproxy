@@ -2,7 +2,7 @@ require 'sinatra'
 require 'json'
 require 'net/http'
 
- require './conf.rb'
+require './conf.rb'
 #require './conf_dev.rb'
 
 set :port, 8332
