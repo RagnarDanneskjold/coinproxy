@@ -2,10 +2,11 @@ require 'sinatra'
 require 'json'
 require 'net/http'
 
-require './conf.rb'
-# require './conf_dev.rb'
+ require './conf.rb'
+#require './conf_dev.rb'
 
 set :port, 8332
+api_list = JSON.parse(IO.read("./api_controller.json"))
 
 post '/' do
   # Unpack the request
@@ -14,8 +15,6 @@ post '/' do
   puts "Client IP: #{request.ip}"
   puts "RPC Method: #{data['method']}"
   puts "RPC Arguments: #{data['params']}"
-
-  api_list = JSON.parse(IO.read("./api_controller.json"))
 
   case api_list[data['method']]
   when nil
